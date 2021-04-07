@@ -12,6 +12,8 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
@@ -93,5 +95,51 @@ fun PhotographerCard(modifier: Modifier = Modifier) {
 fun PhotographerCardPreview() {
     JetpackComposeTheme {
         PhotographerCard()
+    }
+}
+
+/**
+ * understanding scaffold component
+ * scaffold is basic layout structure which implement Material Design
+ * so we can using common material design component like TopAppBar,
+ * BottomAppBar, FloatingActionButton, and Drawer using Scaffold
+ */
+@Composable
+fun ScaffoldLayout() {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(text = "Example of scaffold")
+                },
+                actions = {
+                    IconButton(onClick = { /*do something here*/ }) {
+                        Icon(Icons.Filled.Favorite, contentDescription = "")
+                    }
+                }
+            )
+        }
+    ) { innerPadding ->
+        BodyContent(
+            Modifier
+                .padding(innerPadding)
+                .padding(8.dp)
+        )
+    }
+}
+
+@Composable
+fun BodyContent(modifier: Modifier = Modifier) {
+    Column(modifier = modifier.padding(8.dp)) {
+        Text(text = "Hi there!")
+        Text(text = "Thanks for going through the Layouts codelab")
+    }
+}
+
+@Preview
+@Composable
+fun ScaffoldLayoutPreview() {
+    JetpackComposeTheme {
+        ScaffoldLayout()
     }
 }
