@@ -3,6 +3,7 @@ package id.derysudrajat.composelayout
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -22,7 +23,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.coil.CoilImage
+import coil.annotation.ExperimentalCoilApi
+import coil.compose.rememberImagePainter
 import id.derysudrajat.composelayout.ui.theme.JetpackComposeTheme
 import kotlinx.coroutines.launch
 
@@ -33,7 +35,7 @@ class MainActivity : ComponentActivity() {
             JetpackComposeTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                    LazyList()
                 }
             }
         }
@@ -189,14 +191,15 @@ fun LazyList() {
     }
 }
 
+@OptIn(ExperimentalCoilApi::class)
 @Composable
 fun ImageListItem(index: Int, modifier: Modifier = Modifier) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = modifier.padding(16.dp)
     ) {
-        CoilImage(
-            data = "https://developer.android.com/images/brand/Android_Robot.png",
+        Image(
+            painter = rememberImagePainter(data = "https://developer.android.com/images/brand/Android_Robot.png"),
             contentDescription = "Android Logo",
             modifier = Modifier.size(50.dp)
         )
