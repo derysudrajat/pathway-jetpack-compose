@@ -30,8 +30,12 @@ class TodoActivity : ComponentActivity() {
 private fun TodoActivityScreen(model: TodoViewModel) {
     TodoBody(
         items = model.todoItems,
+        currentlyEditing = model.currentEditItem,
         onItemAdd = model::addItem,
-        onItemRemove = model::removeItem
+        onItemRemove = model::removeItem,
+        onStartEdit = model::onEditItemSelected,
+        onEditItemChange = model::onEditItemChange,
+        onEditDone = model::onEditDone
     )
 
 }
