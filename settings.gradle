@@ -9,3 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "Jetpack Compose"
 include ':app'
 include ':composelayout'
+include ':compoststate'
