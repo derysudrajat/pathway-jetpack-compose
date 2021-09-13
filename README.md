@@ -87,3 +87,27 @@ private fun TodoActivityScreen(model: TodoViewModel) {
     )
 }
 ```
+
+## Track #4 Compose Animation
+
+* Layout Component
+
+<a><img src="https://user-images.githubusercontent.com/32610660/133020525-36f50536-6c1f-483c-882c-c9b642120723.png" width=70% alt="Animation Component"></a>
+
+* Full Layout
+
+<a><img src="https://user-images.githubusercontent.com/32610660/133020847-699eabd4-9157-4e45-bdae-5540bcc6e3b0.png" width=70% alt="Layout Animation"></a>
+
+* Common Animation
+
+The One of Common Animation in Compose is `AnimatedVisibility` this animation still in `ExperimentalAnimationApi`
+```kotlin
+@OptIn(ExperimentalAnimationApi::class)
+@Composable
+fun TopicRowSpacer(visible: Boolean) {
+    AnimatedVisibility(visible = visible) {
+        Spacer(modifier = Modifier.height(8.dp))
+    }
+}
+```
+
