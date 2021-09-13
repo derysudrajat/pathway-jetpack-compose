@@ -185,7 +185,16 @@ fun TodoItemInlineEditor(
 @Preview(showBackground = true)
 @Composable
 fun TodoInputPreview() {
-    TodoInputPreview()
+    TodoItemInput(
+        text = "",
+        onTextChange = {},
+        icon = TodoIcon.Done,
+        onIconChange = {},
+        submit = {},
+        iconVisible = true
+    ) {
+        TodoEditButton(onClick = { }, text = "Add", enable = true)
+    }
 }
 
 
