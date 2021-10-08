@@ -4,6 +4,7 @@ dependencyResolutionManagement {
         google()
         mavenCentral()
         jcenter() // Warning: this repository is going to shut down soon
+        maven { url "https://jitpack.io" }
     }
 }
 rootProject.name = "Jetpack Compose"
@@ -11,3 +12,4 @@ include ':app'
 include ':composelayout'
 include ':compoststate'
 include ':composeanimation'
+include ':composetheme'

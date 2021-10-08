@@ -1,4 +1,4 @@
-package id.derysudrajat.compose
+package id.derysudrajat.composetheme
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

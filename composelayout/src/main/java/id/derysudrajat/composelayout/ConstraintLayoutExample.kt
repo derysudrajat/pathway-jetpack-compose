@@ -50,7 +50,7 @@ fun ConstraintLayoutContent() {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun ConstraintLayoutPreview() {
     JetpackComposeTheme {
@@ -75,7 +75,7 @@ fun LargeConstraintLayout() {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun LargeConstraintLayoutPreview() {
     JetpackComposeTheme {
@@ -116,7 +116,7 @@ fun decoupledConstraints(margin: Dp): ConstraintSet {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
 @Composable
 fun DecoupledConstraintLayoutPreview() {
     JetpackComposeTheme {
