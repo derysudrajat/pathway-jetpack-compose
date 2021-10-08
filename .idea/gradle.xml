@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/composeanimation" />
             <option value="$PROJECT_DIR$/composelayout" />
+            <option value="$PROJECT_DIR$/composetheme" />
             <option value="$PROJECT_DIR$/compoststate" />
           </set>
         </option>
