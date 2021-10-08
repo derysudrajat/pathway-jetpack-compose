@@ -111,3 +111,57 @@ fun TopicRowSpacer(visible: Boolean) {
 }
 ```
 
+## Track #5 Compose Theming
+
+* Layout Component
+
+<a><img src="https://user-images.githubusercontent.com/32610660/136497609-a2effaef-94ee-439b-9cd1-f510c2f4900e.png" width=70% alt="Animation Component"></a>
+
+* Full Layout (Dark and Light)
+
+<a><img src="https://user-images.githubusercontent.com/32610660/136497613-a6639ca1-127c-4727-bd6f-d5f2b29a7f66.png" width=70% alt="Animation Component"></a>
+
+You can define the light theme color and dark theme color in `Theme.kt`
+
+```kotlin
+private val LightColors = lightColors(
+    primary = Red700,
+    primaryVariant = Red900,
+    onPrimary = Color.White,
+    secondary = Red700,
+    secondaryVariant = Red900,
+    onSecondary = Color.White,
+    error = Red800,
+
+    /* Other default colors to override
+    background = Color.White,
+    surface = Color.White,
+    onBackground = Color.Black,
+    onSurface = Color.Black,
+    */
+)
+private val DarkColors = darkColors(
+    primary = Red300,
+    primaryVariant = Red700,
+    onPrimary = Color.Black,
+    secondary = Red300,
+    onSecondary = Color.Black,
+    error = Red200
+)
+```
+You can define your custom theme in here
+```kotlin
+@Composable
+fun JetNewsTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    content: @Composable() () -> Unit
+) {
+    MaterialTheme(
+        colors = if (darkTheme) DarkColors else LightColors,
+        typography = JetNewsTypography,
+        shapes = JetNewsShapes,
+        content = content
+    )
+}
+```
+
